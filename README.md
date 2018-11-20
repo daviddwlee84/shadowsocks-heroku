@@ -34,10 +34,6 @@ set git remote heroku to https://git.heroku.com/david-shadowsocks.git
 
 ### Usage
 
-```
-$ heroku create
-```
-
 Push the code (deploy) to Heroku.
 
 ```
