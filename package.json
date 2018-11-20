@@ -1,6 +1,10 @@
 {
   "name": "shadowsocks-heroku",
-  "version": "0.9.10",
+  "description": "a light weight shadowsocks server support keroku",
+  "version": "0.9.11",
+  "engines": {
+    "node": "9.10.1"
+  },
   "dependencies": {
     "bufferutil": "^3.0.3",
     "https-proxy-agent": "^2.1.1",
