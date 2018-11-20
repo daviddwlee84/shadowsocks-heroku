@@ -10,48 +10,53 @@ Notice that the protocol is INCOMPATIBLE with the origin shadowsocks.
 Heroku
 ------
 
+In my case, my Heroku application name is `david-shadowsocks`. You should replace it with yours.
+
+### Setup
+
+Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+
+```
+# MacOS
+$ brew install heroku/brew/heroku
+```
+
+Clone this repository and add a remote. (First you should create a remote application on Heroku).
+
+```
+$ git clone https://github.com/daviddwlee84/shadowsocks-heroku.git
+$ cd shadowsocks-heroku
+$ heroku git:remote -a david-shadowsocks
+```
+
 ### Usage
 
 ```
 $ heroku create
-Creating still-tor-8707... done, stack is cedar-14
-http://still-tor-8707.herokuapp.com/ | git@heroku.com:still-tor-8707.git
 ```
 
-Push the code to Heroku.
+Push the code (deploy) to Heroku.
 
 ```
 $ git push heroku master
-…
------> Compressing... done, 5.1MB
------> Launching... done, v3
-       http://still-tor-8707.herokuapp.com/ deployed to Heroku
-
-To git@heroku.com:still-tor-8707.git
- * [new branch]      master -> master
 ```
 
 Set a few configs:
 
 ```
-$ heroku config:set METHOD=rc4 KEY=foobar
-Setting config vars and restarting still-tor-8707... done, v11
-KEY:    foobar
-METHOD: rc4
+$ heroku config:set METHOD=rc4-md5 KEY=foobar
 ```
 
 Install project dependencies with `npm install`:
 
 ```
 $ npm install
-…
 ```
 
 Then run:
 
 ```
-$ node local.js -s still-tor-8707.herokuapp.com -l 1080 -m rc4 -k foobar -r 80
-server listening at { address: '127.0.0.1', family: 'IPv4', port: 1080 }
+$ node local.js -s david-shadowsocks.herokuapp.com -l 1080 -m rc4-md5 -k foobar -r 80
 ```
 
 Change proxy settings of your browser into:
@@ -65,7 +70,7 @@ SOCKS5 127.0.0.1:1080
 If there is something wrong, you can check the logs by:
 
 ```
-$ heroku logs -t --app still-tor-8707
+$ heroku logs -t --app david-shadowsocks
 ```
 
 Supported Ciphers
