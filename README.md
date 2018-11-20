@@ -27,6 +27,9 @@ Clone this repository and add a remote. (First you should create a remote applic
 $ git clone https://github.com/daviddwlee84/shadowsocks-heroku.git
 $ cd shadowsocks-heroku
 $ heroku git:remote -a david-shadowsocks
+heroku: Press any key to open up the browser to login or q to exit:
+Logging in... done
+set git remote heroku to https://git.heroku.com/david-shadowsocks.git
 ```
 
 ### Usage
