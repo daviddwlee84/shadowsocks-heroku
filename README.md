@@ -47,8 +47,7 @@ $ git push heroku master
 Set a few configs:
 
 ```
-$ heroku config:set METHOD=rc4-md5 KEY=foobar
-```
+$ heroku config:set METHOD=rc4-md5 KEY=yourPassword
 
 Install project dependencies with `npm install`:
 
@@ -59,7 +58,7 @@ $ npm install
 Then run:
 
 ```
-$ node local.js -s david-shadowsocks.herokuapp.com -l 1080 -m rc4-md5 -k foobar -r 80
+$ node local.js -s david-shadowsocks.herokuapp.com -l 1080 -m rc4-md5 -k yourPassword -r 80
 ```
 
 Change proxy settings of your browser into:
