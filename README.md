@@ -44,8 +44,12 @@ Set a few configs:
 
 ```
 $ heroku config:set METHOD=rc4-md5 KEY=yourPassword
+Setting METHOD, KEY and restarting ⬢ david-shadowsocks... done, v4
+KEY:    yourPassword
+METHOD: rc4-md5
+```
 
-Install project dependencies with `npm install`:
+Install project dependencies with `npm install` or `yarn install`:
 
 ```
 $ npm install
@@ -55,6 +59,7 @@ Then run:
 
 ```
 $ node local.js -s david-shadowsocks.herokuapp.com -l 1080 -m rc4-md5 -k yourPassword -r 80
+server listening at { address: '127.0.0.1', family: 'IPv4', port: 1080 }
 ```
 
 Change proxy settings of your browser into:
@@ -70,6 +75,12 @@ If there is something wrong, you can check the logs by:
 ```
 $ heroku logs -t --app david-shadowsocks
 ```
+
+* [Heroku - Troubleshooting Node.js Deploys](https://devcenter.heroku.com/articles/troubleshooting-node-deploys#check-your-buildpack)
+* [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
+    * Specifying a Node.js Version
+
+        You should always specify a Node.js version that matches the runtime you’re developing and testing with
 
 Supported Ciphers
 -----------------
